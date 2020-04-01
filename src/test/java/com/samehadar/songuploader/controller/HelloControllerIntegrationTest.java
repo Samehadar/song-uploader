@@ -32,7 +32,7 @@ public class HelloControllerIntegrationTest {
     public void testHelloWithName() throws Exception {
         mvc.perform(get("/hello").param("name", "Billie").accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
-                .andExpect(view().name("name"))
+                .andExpect(view().name("hello"))
                 .andExpect(model().attribute("user", is("Billie")));
     }
 }
